@@ -43,7 +43,7 @@ async function fetchBalance(apiKey: string): Promise<string> {
 async function updateStatusBar(statusBarItem: vscode.StatusBarItem) {
     const apiKey = getApiKey();
     if (!apiKey) {
-        statusBarItem.text = "$DeepSeek: 未配置 API Key";
+        statusBarItem.text = "DeepSeek: 未配置 API Key";
         statusBarItem.tooltip = "请打开设置 (Cmd+,) 配置 deepseekBalance.apiKey";
         return;
     }
@@ -51,10 +51,10 @@ async function updateStatusBar(statusBarItem: vscode.StatusBarItem) {
     statusBarItem.text = "$(sync~spin) 查询余额...";
     try {
         const balance = await fetchBalance(apiKey);
-        statusBarItem.text = `$DeepSeek: ¥${balance}`;
+        statusBarItem.text = `DeepSeek: ¥${balance}`;
         statusBarItem.tooltip = `当前余额: ¥${balance}`;
     } catch (error: any) {
-        statusBarItem.text = "$DeepSeek: (error)余额查询失败";
+        statusBarItem.text = "DeepSeek: (error)余额查询失败";
         statusBarItem.tooltip = error.message;
     }
 }

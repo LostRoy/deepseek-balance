@@ -1,6 +1,7 @@
 {
   "name": "deepseek-balance",
   "displayName": "DeepSeek Balance",
+  "publisher": "LostRoy",
   "description": "在状态栏显示余额",
   "version": "0.0.2",
   "repository": {
